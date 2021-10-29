@@ -4,7 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
+
+a{
+    color: #2c2c2c;
+    font-weight: 700;
+}
+
 
 html,body,#root,.container{
     height: 100%;
@@ -12,6 +19,38 @@ html,body,#root,.container{
     justify-content: center;
     background-color: #ddd;
 }
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+.nav{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow : 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3), 0 -6px 16px -6px rgba(0,0,0,0.025);
+}
+
+.center{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .loader{
     width: 100%;
@@ -22,17 +61,23 @@ html,body,#root,.container{
     font-weight: 300;
 }
 
-.movies{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.movies {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-gap: 100px;
     padding: 50px;
-    padding-top: 70px;
     width: 80%;
-}
+    padding-top: 70px;
+  }
+
+  @media screen and (max-width: 1090px) {
+    .movies {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+  }
 
 .movies .movie{
-    width: 45%;
     background-color: #fff;
     margin-bottom: 70px;
     display: flex;
